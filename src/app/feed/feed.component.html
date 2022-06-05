@@ -1,0 +1,76 @@
+<ion-content mode="ios">
+    <!--Esto es para las historias en nuestro IG-->
+    <ion-grid>
+        <ion-row>
+            <ion-col size-md="8" offset-md="2">
+                <app-historias></app-historias>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!--Feed como tal, por lo que la estructura seria primero las historias, luego el FEED-->
+    <ion-grid>
+        <ion-row>
+            <ion-col offset-md="2">
+ <ion-button class="boton" (click)="cargarFeed()">Refrescar Pagina</ion-button>
+            </ion-col>
+           
+        </ion-row>
+        
+        <ion-row *ngFor="let post of posts; let idPost = index;"> <!--Iteramos los posts (que vendrian a ser las publicaciones que van en el feed)-->
+            <ion-col  size-md="8" offset-md="2">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="10">
+                                    <div class="usuario-card-header">    
+                                        <ion-avatar>
+                                            <img src="https://64.media.tumblr.com/a398670157d4f2ef5918b039a013b358/94f36ac9ecfb6135-35/s1280x1920/c059b712c4de325ac9a18420d800b23a6a8f0a24.jpg" width="50px">
+                                        </ion-avatar>
+                                        <ion-label class="label">{{post.usuario}}</ion-label>
+                                    </div>
+                                    </ion-col>
+                                <ion-col size="2">
+                                    <!--{{idPost}}-->
+                                    <ion-button (click)="borrar(post.id)">
+                                        Borrar
+                                    </ion-button>
+
+                                    <ion-button (click)="editar()">
+                                        Editar
+                                    </ion-button>
+                                    <ion-button fill="translucent" id="trigger-popup--{{post.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
+                                    <ion-popover trigger="trigger-popup--{{post.id}}">
+                                        <ng-template>
+                                            <app-popover></app-popover>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-col>
+                            </ion-row>
+                    <ion-row>
+                        <div class="editar" *ngIf="editando">
+                            <ion-input placeholder="Editar caption:  Ejemplo: Que onda mundo" [(ngModel)]="post.caption"></ion-input>
+                            <ion-button (click)="guardar(post.id,post)">Guardar Cambios</ion-button>
+                         </div>
+                    </ion-row>
+                        </ion-grid>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <img [src]="post.src" alt="" width = 100% [routerLink]="['/feedDetalle', post.id]">
+                       
+                        
+                        <div class="opciones">
+                            <ion-button fill="translucent"><ion-icon name="heart-outline"></ion-icon></ion-button>
+                            <ion-button fill="translucent"><ion-icon name="paper-plane-outline"></ion-icon></ion-button>
+                            <ion-button fill="translucent"><ion-icon name="chatbubble-outline"></ion-icon></ion-button>
+                            <ion-button class="derecha" fill="translucent"><ion-icon name="bookmark"></ion-icon></ion-button>
+                        </div>
+                        <p class="caption">{{post.caption}}</p>
+                    </ion-card-content>
+                    
+                </ion-card>
+                
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

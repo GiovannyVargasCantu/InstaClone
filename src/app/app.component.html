@@ -1,0 +1,123 @@
+<ion-app mode="ios">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <div class="container">
+          <ion-label>Instagram</ion-label>
+          <div class="notificaciones">
+            <ion-button fill="translucent" id="trigger-notificaciones">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-button>
+            <ion-popover trigger="trigger-notificaciones" show-backdrop="false">
+              <ng-template>
+                <!--notificaciones aqui-->
+                <ion-list>
+                  <ion-item>
+                    Notificacion
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </div>
+         <div class="perfil">
+          <ion-avatar>
+            <ion-img src="assets/battinson.jpg" id="user-header-pic"></ion-img>
+            <ion-popover trigger="user-header-pic">
+              <ng-template>
+                <ion-list>
+                  <ion-item>
+                    <ion-label>
+                      Cerrar Sesion
+                    </ion-label>
+                    <ion-label>
+                      Cambiar de cuenta
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </ion-avatar>
+          <!--
+            <ion-avatar>
+            <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" width="40px" id="trigger-logout-button"></ion-img>
+            <ion-popover trigger="trigger-logout-button" show-backdrop="false">
+              <ng-template>
+                <ion-list>
+                  <ion-item>
+                    <ion-label>
+                      Cerrar Sesion
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ng-template>
+            </ion-popover>
+          </ion-avatar>
+          -->
+         </div>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  
+    <app-tabs></app-tabs>
+  </ion-content>
+  
+</ion-app>
+<!--
+
+<ion-content>
+
+<app-tabs></app-tabs>
+</ion-content>
+
+Lo de abajo es utilizado en practicas anteriores
+
+
+ <app-tabs>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="feed">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="perfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+ 
+ 
+ 
+ 
+  <ion-header class="top">
+    <ion-toolbar>
+      <ion-title>
+        <p>Que onda  Instagram</p>
+        <button  routerLink="/perfil">Perfil</button>
+        <button routerLink="/feed">Feed</button>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <router-outlet></router-outlet>
+-->
+<!--
+
+
+<p>{{title}}</p>
+
+<p *ngIf="esCierto">Hola mundo</p>
+
+<div *ngFor="let imagen of imagenes">
+  imagen
+  <img src="assets/perritounospelillos.jpeg" alt="" width="250px">
+</div>
+
+<div *ngFor="let perrillo of perrillos">
+  <p>{{perrillo.nombre}}</p>
+  <img src="{{perrillo.src}}" alt="">
+</div>
+
+-->

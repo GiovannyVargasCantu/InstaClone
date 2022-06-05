@@ -1,0 +1,16 @@
+<ion-grid>
+    <ion-row class="historias-container">
+        <ion-col size="1" *ngFor="let x of historias">
+            <ion-avatar>
+                <ion-img src="https://i.pinimg.com/736x/b5/c4/5b/b5c45b82f63c5476f1bff4537b000f1d.jpg" alt="" width="50px" id="foto-usuario{{x}}"></ion-img>
+                <ion-modal trigger="foto-usuario{{x}}"  fullscreen="true" class="fullscreen-modal">
+                    <ng-template>
+                        <app-historia-contenido></app-historia-contenido>
+                    </ng-template>
+                </ion-modal>
+            </ion-avatar>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+

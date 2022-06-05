@@ -1,0 +1,38 @@
+<ion-card mode="ios">
+    <ion-card-header>
+        <ion-grid>
+            <ion-row>
+                <ion-col size ="11">
+                    <strong>{{feedImprimir.id}}</strong>
+                </ion-col>
+                <ion-col size="1">
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-card-header>
+    <ion-card-content>
+        <img [src]="feedImprimir.src" alt="" height="120px">
+    </ion-card-content> 
+    <p class="caption">{{feedImprimir.caption}}</p>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="1">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1" offset="8">
+                    <ion-icon name="bookmark-outline"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-card>
+
